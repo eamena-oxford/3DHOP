@@ -157,7 +157,8 @@ function actionsToolbar(action) {
 	else if(action=='zoomout') presenter.zoomOut();
 //--ZOOM--
 //--LIGHTING--
-	else if(action=='lighting' || action=='lighting_off') { presenter.enableSceneLighting(!presenter.isSceneLightingEnabled()); lightingSwitch(); }
+	else if(action=='lighting_off' || action=='lighting') { presenter.enableSceneLighting(!presenter.isSceneLightingEnabled()); lightingSwitch(); }
+	// else if(action=='lighting' || action=='lighting_off') { presenter.enableSceneLighting(!presenter.isSceneLightingEnabled()); lightingSwitch(); }
 //--LIGHTING--
 //--LIGHT--
 	else if(action=='light' || action=='light_on') { presenter.enableLightTrackball(!presenter.isLightTrackballEnabled()); lightSwitch(); }
