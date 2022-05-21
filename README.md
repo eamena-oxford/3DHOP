@@ -1,3 +1,7 @@
+3DHOP repo used for the EAMENA project
+
+---
+
 ![3DHOP Logo](documentation/img/logo.png) **3DHOP**
 =========
 3D Heritage Online Presenter
