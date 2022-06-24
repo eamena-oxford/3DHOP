@@ -24,6 +24,25 @@
 </head>
 <body>
 <div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()"><div id="tdhlg"></div>
+<table id="cover" onclick="$('#cover').css('display', 'none'); helpSwitch(false);">
+	<tr align="center"><td valign="center">
+	<table class="panel" id="info_panel_vertical" cellspacing="10" onclick="event.stopPropagation();">
+	  <tbody>
+		<tr>
+		 <td style="vertical-align:top;">
+			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, soluta? Numquam ex officia natus minima, dicta totam consectetur soluta rem velit aut, modi odit neque corporis ea deleniti. Provident, dolores.
+			 <!-- <img id="hs1_img" src="img/confoc_3d.png" style="max-width:350px; max-height:500px;"/>
+			  <figcaption style='font-size:80%;text-align:center;margin-top:5px;margin-left:5px;'><a
+			  href="https://zoometh.github.io/3DHOP/minimal/lithic_tool_cf.html" target="_blank"><p style="background-color:black;">to 3D Confocal</p></a></figcaption> -->
+		 </td>
+		 <td style="vertical-align:top;">
+			 <p class="scroll" style="max-height:500px; font-style:normal; text-align:justify; margin-top:-3px; padding:3px 3px 40px 3px;"><span class="hs_text"></span></p>
+		 </td>
+		</tr>
+	 </tbody>
+	</table>
+	  </td></tr>
+  </table>
  <div id="toolbar">
   <img id="home"        title="Home"                   src="skins/dark/home.png"/><br/>
 <!--ZOOM-->
@@ -209,7 +228,7 @@ function actionsToolbar(action) {
 function onEndMeasure(measure) {
 	// measure.toFixed(2) sets the number of decimals when displaying the measure
 	// depending on the model measure units, use "mm","m","km" or whatever you have
-	$('#measure-output').html(measure.toFixed(2) + "mm"); 
+	$('#measure-output').html(measure.toFixed(2) + "m"); 
 }
 //--MEASURE--
 
