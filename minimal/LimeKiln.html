@@ -75,6 +75,8 @@
  <div id="pickpoint-box" class="output-box">XYZ picked point<hr/><span id="pickpoint-output" class="output-text" onmousedown="event.stopPropagation()">[ 0 , 0 , 0 ]</span></div>
 <!--POINT PICKING-->
 
+
+
 <!--SECTIONS-->
  <div id="sections-box" class="output-box">
   <table class="output-table" onmousedown="event.stopPropagation()">
@@ -113,7 +115,8 @@ function setup3dhop() {
 
 	presenter.setScene({
 		meshes: {
-			"mesh_1" : { url: "models/QED_26_27_midres_light_centered_swap_Y_Z.nxz" }
+			"mesh_1" : { url: "models/QED_26_27_midres_light_centered_swap_Y_Z.nxz" },
+			"Sphere" : { url: "QED_26_27_annot1.ply"}
 		},
 		modelInstances : {
 			"model_1" : { 
@@ -131,7 +134,14 @@ function setup3dhop() {
 				minMaxTheta: [-30.0, 70.0],
 				minMaxDist: [0.5, 3.0]
 			}
-		}
+		},
+		spots: {
+        "Sphere": {
+          mesh: "Sphere",
+          color: [0.0, 0.25, 1.0],
+          alpha: 0.5
+        }
+      }
 	});
 
 //--MEASURE--
@@ -145,6 +155,10 @@ function setup3dhop() {
 //--SECTIONS--
 	sectiontoolInit();
 //--SECTIONS--
+
+//--SPOT VISIBILITY
+	presenter.setSpotVisibility(HOP_ALL, true, true);
+	presenter._onPickedSpot = onPickedSpt;	
 }
 
 function actionsToolbar(action) {
@@ -200,6 +214,12 @@ function onEndPick(point) {
     $('#pickpoint-output').html("[ "+x+" , "+y+" , "+z+" ]");
 } 
 //--PICKPOINT--	
+
+function onPickedSpt(id) {
+  switch(id) {
+   case 'Sphere' : showPanel('info_panel_vertical'); setInfo(id); break; 
+  }
+}
 
 $(document).ready(function(){
 	init3dhop();
